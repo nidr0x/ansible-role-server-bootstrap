@@ -1,0 +1,12 @@
+---
+# tasks file for bootstrap
+
+- include: hostname.yml
+
+- include: debian.yml
+  when: ansible_os_family == 'Debian'
+
+- include: centos.yml
+  when: ansible_os_family == 'RedHat'
+
+- include: other.yml

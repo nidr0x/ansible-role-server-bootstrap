@@ -1,0 +1,5 @@
+---
+
+- name: Setting the hostname...
+  hostname:
+    name: "{{ hostname|default('bootstrap') }}"

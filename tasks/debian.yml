@@ -1,0 +1,17 @@
+---
+
+- name: Debian | Installing dbus package
+  apt:
+    name: dbus
+    update_cache: yes
+
+- name: Debian | Update and upgrade packages
+  apt: update_cache=yes cache_valid_time=3600 upgrade=dist
+
+- name: Debian | Securing SSH configuration
+  lineinfile:
+    dest: /etc/ssh/sshd_config
+    regexp: "^PermitRootLogin"
+    line: "PermitRootLogin without-password"
+    state: present
+  notify: restart ssh

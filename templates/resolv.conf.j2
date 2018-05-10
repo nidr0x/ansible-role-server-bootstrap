@@ -1,0 +1,8 @@
+# {{ ansible_managed }}
+
+{% if resolv_domain %}
+domain {{ resolv_domain }}
+{% endif %}
+{% for i in resolv_nameservers %}
+nameserver {{ i }}
+{% endfor %}

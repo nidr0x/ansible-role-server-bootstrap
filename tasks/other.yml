@@ -1,0 +1,25 @@
+---
+
+- name: Setting timezone
+  timezone:
+    name: "{{ timezone }}"
+
+- name: Disable GRUB timeout
+  replace:
+    path: /etc/default/grub
+    regexp: "GRUB_TIMEOUT=w"
+    replace: "GRUB_TIMEOUT=0"
+
+- name: Debian | Reload GRUB configuration
+  shell: update-grub
+  when: ansible_os_family == 'Debian'
+
+- name: CentOS | Reload GRUB configuration
+  shell: grub2-mkconfig -o /etc/grub2.cfg
+  when: ansible_os_family == 'RedHat'
+
+- name: Configuring resolv.conf
+  template:
+    src: resolv.conf.j2
+    dest: /etc/resolv.conf
+  mode: 0644 

@@ -1,0 +1,14 @@
+---
+# defaults file for bootstrap
+
+# Define your timezone
+ timezone: "Europe/Madrid"
+
+# Define your hostname:
+ hostname: "server"
+
+# Define your resolv.conf configuration
+ resolv_nameservers:
+    - 1.1.1.1
+    - 1.0.0.1
+ resolv_domain: ''    
