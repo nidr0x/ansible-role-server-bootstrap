@@ -3,13 +3,13 @@
 - name: CentOS | Upgrade all packages
   yum: name=* state=latest
 
-- name: Install yum-cron
+- name: CentOS | Install yum-cron
   package: name=yum-cron state=present
 
-- name: Enabling yum-cron on boot
+- name: CentOS | Enabling yum-cron on boot
   service: name=yum-cron state=started enabled=yes
 
-- name: Securing SSH configuration
+- name: CentOS | Securing SSH configuration
   lineinfile:
     dest: /etc/ssh/sshd_config
     regexp: "^PermitRootLogin"
@@ -17,7 +17,7 @@
     state: present
   notify: restart sshd
 
-- name: remove unused repositories
+- name: CentOS | Remove unused repositories
   file:
     name: '/etc/yum.repos.d/{{ item }}.repo'
     state: 'absent'
