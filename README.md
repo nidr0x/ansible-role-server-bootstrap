@@ -1,7 +1,7 @@
 Ansible-bootstrap
 =========
 
-A brief description of the role goes here.
+My own bootstrap role for doing initial configurations in Debian or CentOS operating systems.
 
 # Requirements
 
@@ -25,7 +25,7 @@ Including an example of how to use your role (for instance, with variables passe
 
 # Requirements & dependencies
 
-It's only compatible with Debian (Maybe Ubuntu, but not tested).
+CentOS and Debian/Ubuntu.
 
 ## License
 
