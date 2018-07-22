@@ -12,3 +12,9 @@
     - 1.1.1.1
     - 1.0.0.1
  resolv_domain: ''    
+
+# Please, pay attention to your package names matches with the distribution you are using 
+ default_install_packages:
+   - vim
+   - htop
+
