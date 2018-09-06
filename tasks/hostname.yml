@@ -3,3 +3,10 @@
 - name: Setting the hostname...
   hostname:
     name: "{{ hostname|default('bootstrap') }}"
+    
+- name: Disable cloud-init hostname handle
+  lineinfile:
+    dest: /etc/cloud/cloud.cfg
+    regexp: 'update_hostname'
+    line: '# - update_hostname'
+    backup: yes    
