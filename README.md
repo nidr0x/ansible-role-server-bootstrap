@@ -1,4 +1,4 @@
-Ansible-bootstrap
+Ansible-role-server-bootstrap
 =========
 
 My own bootstrap role for doing initial configurations in Debian or CentOS operating systems.
